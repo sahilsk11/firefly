@@ -8,9 +8,12 @@ function Navbar(props) {
       width: "100%"
     },
     navHeader: {
-      paddingTop: "43px",
-      paddingLeft: "5%",
-      display: "flex"
+      marginTop: "43px",
+      marginLeft: "5%",
+      display: "flex",
+      width: "109px",
+      height: "40px",
+      cursor: "pointer"
     },
     navImg: {
       height: "40px"
@@ -50,7 +53,7 @@ function Navbar(props) {
   }
   return (
     <div style={styles.navContainer}>
-      <div style={styles.navHeader}>
+      <div style={styles.navHeader} onClick={() => window.location.href="."}>
         <img src="./img/nav-logo.png" style={styles.navImg} />
         <p style={styles.navTitle}>Firefly</p>
       </div>
