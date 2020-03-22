@@ -55,8 +55,8 @@ function Navbar(props) {
         <p style={styles.navTitle}>Firefly</p>
       </div>
       <div style={styles.linkContainer}>
-        <a href="#" style={styles.navLink}>Home</a>
-        <a href="#" style={styles.navLink}>Projects</a>
+        <a href="." style={styles.navLink}>Home</a>
+        <a href="projects" style={styles.navLink}>Projects</a>
         <a href="#" style={styles.navLink}>About</a>
         <a href="#" style={styles.navLink}>For Companies</a>
         <a href="#"><button style={styles.build}>Start Building!</button></a>

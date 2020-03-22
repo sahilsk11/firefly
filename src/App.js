@@ -1,9 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './Header.js';
+import SignUp from './Footer.js';
+import Projects from './Projects.js';
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+
 
 function App() {
+  return (
+    <Router>
+      <Route exact path="/">
+        {Index()}
+      </Route>
+      <Route path="/projects">
+        {Projects()}
+      </Route>
+    </Router>
+  )
+}
+
+function Index() {
   const globalStyles = {
     sectionTitle: {
       textAlign: "center",
@@ -232,7 +248,7 @@ function Makers(props) {
           description: "Linus spends most of his free time working on side projects ranging from an audio travel diary to creative coding tools to his own programming language.",
           img: "./img/linus.png",
           person: true,
-          children: <img style={styles.badge} src="./img/badge.svg"/>
+          children: <img style={styles.badge} src="./img/badge.svg" />
         })}
         {DiscoverCard({
           title: "Katherine Huang",
@@ -317,62 +333,6 @@ function DiscoverCard(props) {
       <h5 style={styles.cardTitle}>{props.title}</h5>
       <p style={styles.description}>{props.description}</p>
       {props.children}
-    </div>
-  )
-}
-
-function SignUp() {
-  const styles = {
-    container: {
-      backgroundColor: "#FAFAFA",
-      minHeight: "300px",
-      backgroundImage: "url('./img/round.svg')",
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "top",
-      paddingTop: "40px"
-    },
-    subtitle: {
-      textAlign: "center",
-      color: "#FEC000",
-      fontWeight: "800"
-    },
-    title: {
-      textAlign: "center",
-      width: "80%",
-      maxWidth: "1000px",
-      margin: "0px auto",
-      color: "white",
-      fontWeight: "600",
-      lineHeight: "180%"
-    },
-    input: {
-      backgroundColor: "rgba(0, 0, 0, 0)",
-      border: "1px solid white",
-      width: "200px",
-      height: "30px",
-      borderRadius: "13px",
-      margin: "0px auto",
-      display: "block",
-      marginTop: "40px",
-      color: "white",
-      fontSize: "17px",
-      paddingLeft: "10px",
-      outline: "none"
-    },
-    subtext: {
-      display: "block",
-      textAlign: "center",
-      color: "rgba(255, 255, 255, 0.51)",
-      fontSize: "10px"
-    }
-  }
-
-  return (
-    <div style={styles.container}>
-      <h3 style={styles.subtitle}>New challenges every two weeks</h3>
-      <h1 style={styles.title}>Join the Firefly community to hear about new challenges, opportunities, and internships for students.</h1>
-      <input style={styles.input} placeholder="Your email"/>
-      <p style={styles.subtext}>Just 2 emails / month. No B.S.</p>
     </div>
   )
 }
